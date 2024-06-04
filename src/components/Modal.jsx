@@ -22,9 +22,11 @@ function Modal({
           <h3 className="font-semibold">
             Here are your Loan Payment Details :{" "}
           </h3>
-          <p>{`Monthly Payment: ${monthlyPayment}$`}</p>
-          <p>{`Total Payment: ${totalPayment}$`}</p>
-          <p>{`Total Interest: ${totalInterest}$`}</p>
+          <div className="p-2">
+            <p>{`You will need to pay ${monthlyPayment}$ each month.`}</p>
+            <p>{`Total amount that will be payed over loan life is ${totalPayment}$ .`}</p>
+            <p>{`Total Interest: ${totalInterest}$`}</p>
+          </div>
         </div>
       </div>
     </div>
