@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "./Modal";
 
 function FormComponent() {
   const [loanAmount, setLoanAmount] = useState(0);
@@ -7,6 +8,7 @@ function FormComponent() {
   const [monthlyPayment, setMonthlyPayment] = useState(0);
   const [totalPayment, setTotalPayment] = useState(0);
   const [totalInterest, setTotalInterest] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const calculatePayments = () => {
     const monthlyRate = interestRate / 100 / 12;
@@ -17,6 +19,7 @@ function FormComponent() {
       setMonthlyPayment(monthly.toFixed(2));
       setTotalPayment((monthly * numberOfPayments).toFixed(2));
       setTotalInterest((monthly * numberOfPayments - loanAmount).toFixed(2));
+      setIsModalOpen(true);
     }
   };
 
@@ -31,30 +34,42 @@ function FormComponent() {
                 Loan Payment Calculator
               </h1>
             </div>
-            <div className="divide-y divide-gray-200">
-              <div>
-                <input
-                  type="number"
-                  placeholder="Enter the Loan Amount"
-                  onChange={(e) => setLoanAmount(e.target.value)}
-                  className="mt-8 border rounded-lg p-2 w-full"
-                />
+            <div>
+              <div className="mt-4">
+                <label htmlFor="loan" className="font-semibold ml-1 ">
+                  Loan Amount:
+                  <input
+                    id="loan"
+                    type="number"
+                    placeholder="Enter the Loan Amount"
+                    onChange={(e) => setLoanAmount(e.target.value)}
+                    className="border rounded-lg p-2 w-full"
+                  />
+                </label>
               </div>
-              <div>
-                <input
-                  type="number"
-                  placeholder="Enter the Interest Rate"
-                  onChange={(e) => setInterestRate(e.target.value)}
-                  className="mt-8 border rounded-lg p-2 w-full"
-                />
+              <div className="mt-4">
+                <label htmlFor="interest" className="font-semibold ml-1">
+                  Interest Rate:
+                  <input
+                    id="interest"
+                    type="number"
+                    placeholder="Enter the Interest Rate"
+                    onChange={(e) => setInterestRate(e.target.value)}
+                    className="border rounded-lg p-2 w-full"
+                  />
+                </label>
               </div>
-              <div>
-                <input
-                  type="number"
-                  placeholder="Enter the Loan Term (years)"
-                  onChange={(e) => setLoanTerm(e.target.value)}
-                  className="mt-8 border rounded-lg p-2 w-full"
-                />
+              <div className="mt-4">
+                <label htmlFor="term" className="font-semibold ml-1">
+                  Loan Term:
+                  <input
+                    id="term"
+                    type="number"
+                    placeholder="Enter the Loan Term (years)"
+                    onChange={(e) => setLoanTerm(e.target.value)}
+                    className="border rounded-lg p-2 w-full"
+                  />
+                </label>
               </div>
               <div>
                 <button
@@ -64,13 +79,17 @@ function FormComponent() {
                   Calculate
                 </button>
               </div>
-              <p className="mt-8 text-xl">Monthly Payment: {monthlyPayment}</p>
-              <p className="mt-8 text-xl">Total Payment: {totalPayment}</p>
-              <p className="mt-8 text-xl">Total Interest: {totalInterest}</p>
             </div>
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        monthlyPayment={monthlyPayment}
+        totalPayment={totalPayment}
+        totalInterest={totalInterest}
+      />
     </div>
   );
 }
