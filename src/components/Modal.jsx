@@ -18,9 +18,9 @@ function Modal({
         >
           &times;
         </span>
-        <p>Monthly Payent: {monthlyPayment}</p>
-        <p>Total Payment: {totalPayment}</p>
-        <p>Total Interest: {totalInterest}</p>
+        <p>{`Monthly Payment: ${monthlyPayment}$`}</p>
+        <p>{`Total Payment: ${totalPayment}$`}</p>
+        <p>{`Total Interest: ${totalInterest}$`}</p>
       </div>
     </div>
   );
