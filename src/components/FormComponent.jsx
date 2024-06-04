@@ -32,30 +32,38 @@ function FormComponent() {
               </h1>
             </div>
             <div className="divide-y divide-gray-200">
-              <input
-                type="number"
-                placeholder="Enter the Loan Amount"
-                onChange={(e) => setLoanAmount(e.target.value)}
-                className="mt-8 border rounded-lg p-2"
-              />
-              <input
-                type="number"
-                placeholder="Enter the Interest Rate"
-                onChange={(e) => setInterestRate(e.target.value)}
-                className="mt-8 border rounded-lg p-2"
-              />
-              <input
-                type="number"
-                placeholder="Enter the Loan Term (years)"
-                onChange={(e) => setLoanTerm(e.target.value)}
-                className="mt-8 border rounded-lg p-2"
-              />
-              <button
-                onClick={calculatePayments}
-                className="mt-8 bg-blue-500 text-white font-bold py-2 px-4 rounded"
-              >
-                Calculate
-              </button>
+              <div>
+                <input
+                  type="number"
+                  placeholder="Enter the Loan Amount"
+                  onChange={(e) => setLoanAmount(e.target.value)}
+                  className="mt-8 border rounded-lg p-2 w-full"
+                />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  placeholder="Enter the Interest Rate"
+                  onChange={(e) => setInterestRate(e.target.value)}
+                  className="mt-8 border rounded-lg p-2 w-full"
+                />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  placeholder="Enter the Loan Term (years)"
+                  onChange={(e) => setLoanTerm(e.target.value)}
+                  className="mt-8 border rounded-lg p-2 w-full"
+                />
+              </div>
+              <div>
+                <button
+                  onClick={calculatePayments}
+                  className="mt-8 bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                >
+                  Calculate
+                </button>
+              </div>
               <p className="mt-8 text-xl">Monthly Payment: {monthlyPayment}</p>
               <p className="mt-8 text-xl">Total Payment: {totalPayment}</p>
               <p className="mt-8 text-xl">Total Interest: {totalInterest}</p>
