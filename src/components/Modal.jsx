@@ -10,12 +10,15 @@ function Modal({
   }
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>
+    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70vw] bg-white rounded shadow-xl z-10">
+      <div>
+        <span
+          className="absolute top-[1.2rem] right-[2rem] text-[5rem] text-grey-800 cursor-pointer border-none bg-none"
+          onClick={onClose}
+        >
           &times;
         </span>
-        <p>Monthly Payment: {monthlyPayment}</p>
+        <p>Monthly Payent: {monthlyPayment}</p>
         <p>Total Payment: {totalPayment}</p>
         <p>Total Interest: {totalInterest}</p>
       </div>

@@ -90,6 +90,7 @@ function FormComponent() {
         totalPayment={totalPayment}
         totalInterest={totalInterest}
       />
+      <div className={isModalOpen ? "overlay" : "hidden"}></div>
     </div>
   );
 }
