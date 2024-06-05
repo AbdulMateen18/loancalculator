@@ -11,10 +11,10 @@ function FormComponent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const calculatePayments = () => {
-    const monthlyRate = interestRate / 100 / 12;
-    const numberOfPayments = loanTerm * 12;
-    const temp = Math.pow(1 + monthlyRate, numberOfPayments);
-    const monthly = (loanAmount * temp * monthlyRate) / (temp - 1);
+    const monthlyRate = interestRate / 100 / 12; // r
+    const numberOfPayments = loanTerm * 12; // n
+    const temp = Math.pow(1 + monthlyRate, numberOfPayments); // (1+r)^n
+    const monthly = (loanAmount * monthlyRate * temp) / (temp - 1); // p*r*(1+r)^n / (1+r)^n-1
     if (isFinite(monthly)) {
       setMonthlyPayment(monthly.toFixed(2));
       setTotalPayment((monthly * numberOfPayments).toFixed(2));
