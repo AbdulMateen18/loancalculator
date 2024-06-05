@@ -11,15 +11,24 @@ function FormComponent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const calculatePayments = () => {
-    const monthlyRate = interestRate / 100 / 12; // r
-    const numberOfPayments = loanTerm * 12; // n
-    const temp = Math.pow(1 + monthlyRate, numberOfPayments); // (1+r)^n
-    const monthly = (loanAmount * monthlyRate * temp) / (temp - 1); // p*r*(1+r)^n / (1+r)^n-1
-    if (isFinite(monthly)) {
-      setMonthlyPayment(monthly.toFixed(2));
-      setTotalPayment((monthly * numberOfPayments).toFixed(2));
-      setTotalInterest((monthly * numberOfPayments - loanAmount).toFixed(2));
+    const P = parseFloat(loanAmount);
+    const annualRate = parseFloat(interestRate) / 100;
+    const r = annualRate / 12;
+    const n = parseFloat(loanTerm) * 12;
+    const M = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    // const monthlyRate = interestRate / 100 / 12; // r
+    // const numberOfPayments = loanTerm * 12; // n
+    // const temp = Math.pow(1 + monthlyRate, numberOfPayments); // (1+r)^n
+    // const monthly = (loanAmount * monthlyRate * temp) / (temp - 1); // p*r*(1+r)^n / (1+r)^n-1
+    if (isFinite(M)) {
+      setMonthlyPayment(M.toFixed(2));
+      setTotalPayment((M * n).toFixed(2));
+      setTotalInterest((M * n - P).toFixed(2));
       setIsModalOpen(true);
+    } else {
+      setMonthlyPayment("Invalid Input");
+      setTotalPayment("Invalid Input");
+      setTotalInterest("Invalid Input");
     }
   };
 
@@ -41,7 +50,7 @@ function FormComponent() {
                   <input
                     id="loan"
                     type="number"
-                    placeholder="Enter the Loan Amount"
+                    placeholder="Enter the Loan Amount ($)"
                     onChange={(e) => setLoanAmount(e.target.value)}
                     className="border rounded-lg p-2 w-full"
                   />
@@ -49,7 +58,7 @@ function FormComponent() {
               </div>
               <div className="mt-4">
                 <label htmlFor="interest" className="font-semibold ml-1">
-                  Interest Rate:
+                  Interest Rate (%):
                   <input
                     id="interest"
                     type="number"
