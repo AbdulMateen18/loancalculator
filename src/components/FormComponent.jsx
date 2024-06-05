@@ -53,10 +53,11 @@ function FormComponent() {
                   <input
                     id="interest"
                     type="number"
-                    placeholder="Enter the Interest Rate"
+                    placeholder="Enter the annual Interest Rate"
                     onChange={(e) => setInterestRate(e.target.value)}
                     className="border rounded-lg p-2 w-full"
                   />
+                  {/* This will be in percentage, will have to divide it by 100 */}
                 </label>
               </div>
               <div className="mt-4">
