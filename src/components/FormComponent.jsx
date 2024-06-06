@@ -18,7 +18,7 @@ function FormComponent() {
     const M = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     // const monthlyRate = interestRate / 100 / 12; // r
     // const numberOfPayments = loanTerm * 12; // n
-    // const temp = Math.pow(1 + monthlyRate, numberOfPayments); // (1+r)^n
+
     if (isFinite(M)) {
       setMonthlyPayment(M.toFixed(2));
       setTotalPayment((M * n).toFixed(2));
