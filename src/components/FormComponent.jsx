@@ -10,6 +10,20 @@ function FormComponent() {
   const [totalInterest, setTotalInterest] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const clearInputs = () => {
+    setLoanAmount(0);
+    setInterestRate(0);
+    setLoanTerm(0);
+    setMonthlyPayment(0);
+    setTotalPayment(0);
+    setTotalInterest(0);
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+    clearInputs();
+  };
+
   const calculatePayments = () => {
     const P = parseFloat(loanAmount);
     const annualRate = parseFloat(interestRate) / 100;
