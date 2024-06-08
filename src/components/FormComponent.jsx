@@ -105,7 +105,7 @@ function FormComponent() {
       </div>
       <Modal
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={handleClose}
         monthlyPayment={monthlyPayment}
         totalPayment={totalPayment}
         totalInterest={totalInterest}
