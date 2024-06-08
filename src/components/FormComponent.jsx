@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { Toaster, toast } from "react-hot-toast";
 
 function FormComponent() {
   const [loanAmount, setLoanAmount] = useState(0);
@@ -30,15 +31,21 @@ function FormComponent() {
     const r = annualRate / 12;
     const n = parseFloat(loanTerm) * 12;
     const M = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+    if (isNaN(P) || isNaN(annualRate) || isNaN(n)) {
+      toast.error("Please enter valid numbers for all fields");
+      return;
+    }
+
     if (isFinite(M)) {
       setMonthlyPayment(M.toFixed(2));
       setTotalPayment((M * n).toFixed(2));
       setTotalInterest((M * n - P).toFixed(2));
       setIsModalOpen(true);
+      toast.success("Here are your calculations!");
     } else {
-      setMonthlyPayment("Invalid Input");
-      setTotalPayment("Invalid Input");
-      setTotalInterest("Invalid Input");
+      toast.error("Please enter valid numbers for all fields");
+      return;
     }
   };
 
@@ -114,6 +121,7 @@ function FormComponent() {
         totalInterest={totalInterest}
       />
       <div className={isModalOpen ? "overlay" : "hidden"}></div>
+      <Toaster />
     </div>
   );
 }
