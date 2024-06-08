@@ -12,7 +12,7 @@ function Modal({
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70vw] bg-white rounded shadow-xl z-10">
       <span
-        className="absolute right-[0.1rem] text-[2.5rem] text-grey-800 cursor-pointer border-none bg-none"
+        className="absolute top-[-0.7rem] right-[0.1rem] text-[2.5rem] text-grey-800 cursor-pointer border-none bg-none"
         onClick={onClose}
       >
         &times;
