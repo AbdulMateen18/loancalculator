@@ -62,6 +62,7 @@ function FormComponent() {
                     type="number"
                     placeholder="Enter the Loan Amount ($)"
                     onChange={(e) => setLoanAmount(e.target.value)}
+                    value={loanAmount}
                     className="border rounded-lg p-2 w-full"
                   />
                 </label>
@@ -74,6 +75,7 @@ function FormComponent() {
                     type="number"
                     placeholder="Enter the annual Interest Rate"
                     onChange={(e) => setInterestRate(e.target.value)}
+                    value={interestRate}
                     className="border rounded-lg p-2 w-full"
                   />
                   {/* This will be in percentage, will have to divide it by 100 */}
@@ -86,6 +88,7 @@ function FormComponent() {
                     id="term"
                     type="number"
                     placeholder="Enter the Loan Term (years)"
+                    value={loanTerm}
                     onChange={(e) => setLoanTerm(e.target.value)}
                     className="border rounded-lg p-2 w-full"
                   />
