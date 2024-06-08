@@ -11,13 +11,13 @@ function Modal({
 
   return (
     <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70vw] bg-white rounded shadow-xl z-10">
-      <div className="relative">
-        <span
-          className="absolute top-[0.11rem] right-[0.1rem] text-[2.5rem] text-grey-800 cursor-pointer border-none bg-none"
-          onClick={onClose}
-        >
-          &times;
-        </span>
+      <span
+        className="absolute right-[0.1rem] text-[2.5rem] text-grey-800 cursor-pointer border-none bg-none"
+        onClick={onClose}
+      >
+        &times;
+      </span>
+      <div>
         <div className="p-6">
           <h3 className="font-semibold">
             Here are your Loan Payment Details :{" "}
