@@ -25,6 +25,8 @@ function FormComponent() {
     clearInputs();
   };
 
+  // Actual Calculations (Bussiness Logic of the program)
+
   const calculatePayments = () => {
     const P = parseFloat(loanAmount);
     const annualRate = parseFloat(interestRate) / 100;
