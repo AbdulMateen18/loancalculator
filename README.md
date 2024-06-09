@@ -20,3 +20,7 @@ The App takes following input from user:
 - Loan Amount
 - Interest Rate (%)
 - Loan term (Number of years to payback the loan)
+
+### Calculations:
+
+!["calculation image"](calculation_formula.png)
