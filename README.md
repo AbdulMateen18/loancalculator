@@ -8,3 +8,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Loan Payment Calculator App-built using React.JS and TailwindCSS
+
+### Description:
+
+This is a simple loan payment calculator app built using React.js and TailwindCSS. The app allows user to calculate
