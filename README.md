@@ -10,5 +10,3 @@ Currently, two official plugins are available:
 ## Loan Payment Calculator App-built using React.JS and TailwindCSS
 
 ### Description:
-
-This is a simple loan payment calculator app built using React.js and TailwindCSS. The app allows user to calculate
