@@ -23,4 +23,4 @@ The App takes following input from user:
 
 ### Calculations:
 
-!["calculation image"](calculation_formula.png)
+![Calculation Formula](calculation_formula.png)
