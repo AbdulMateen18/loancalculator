@@ -41,4 +41,9 @@ Here are your Loan Payment Details :
 
 ## How to run the project locally?
 
---After downloading the zip file, extract it and
+- After downloading the zip file, extract it and open cmd or any terminal in this folder
+- write: "npm install" and hit enter
+- write: "npm run dev" and hit enter
+- press ctrl and click on the link next to local heading i.e., "Local: http://localhost:5173/"
+
+Here you go, your project is running on your local machine.
