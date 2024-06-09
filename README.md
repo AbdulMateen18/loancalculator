@@ -35,7 +35,7 @@ The Output will be displayed in a separate modal window as:
 
 ## Additional Libraries:
 
--Used react-hot-toast for displaying error and success notifications.
+- Used react-hot-toast for displaying error and success notifications.
 
 ## How to run the project locally?
 
