@@ -32,3 +32,11 @@ The Output will be displayed in a separate modal window as:
 ----You will need to pay XXXX.XX$ each month.
 ----Total amount that will be payed over loan life is XXXXXX.XX$ .
 ----Total Interest: XXXX.XX$
+
+## Additional Libraries:
+
+-Used react-hot-toast for displaying error and success notifications.
+
+## How to run the project locally?
+
+--After downloading the zip file, extract it and
