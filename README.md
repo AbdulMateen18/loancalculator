@@ -28,7 +28,8 @@ The App takes following input from user:
 ### Output:
 
 The Output will be displayed in a separate modal window as:
---Here are your Loan Payment Details :
+
+Here are your Loan Payment Details :
 
 - You will need to pay XXXX.XX$ each month.
 - Total amount that will be payed over loan life is XXXXXX.XX$ .
